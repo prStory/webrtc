@@ -83,6 +83,8 @@ type PeerConnection struct {
 	log logging.LeveledLogger
 
 	interceptorRTCPWriter interceptor.RTCPWriter
+
+	trackChannels map[string]chan
 }
 
 // NewPeerConnection creates a PeerConnection with the default codecs and
