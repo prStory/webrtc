@@ -84,7 +84,7 @@ type PeerConnection struct {
 
 	interceptorRTCPWriter interceptor.RTCPWriter
 
-	trackChannels map[string]chan
+	trackChannels map[string]chan bool
 }
 
 // NewPeerConnection creates a PeerConnection with the default codecs and
@@ -132,8 +132,9 @@ func (api *API) NewPeerConnection(configuration Configuration) (*PeerConnection,
 		greaterMid:             -1,
 		signalingState:         SignalingStateStable,
 
-		api: api,
-		log: api.settingEngine.LoggerFactory.NewLogger("pc"),
+		api:           api,
+		log:           api.settingEngine.LoggerFactory.NewLogger("pc"),
+		trackChannels: make(map[string]chan bool),
 	}
 	pc.iceConnectionState.Store(ICEConnectionStateNew)
 	pc.connectionState.Store(PeerConnectionStateNew)
