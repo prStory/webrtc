@@ -13,10 +13,10 @@ import (
 	"github.com/pion/interceptor"
 	"github.com/pion/interceptor/pkg/cc"
 	"github.com/pion/interceptor/pkg/gcc"
-	"github.com/pion/webrtc/v3"
-	"github.com/pion/webrtc/v3/examples/internal/signal"
-	"github.com/pion/webrtc/v3/pkg/media"
-	"github.com/pion/webrtc/v3/pkg/media/ivfreader"
+	"github.com/prStory/webrtc/v3"
+	"github.com/prStory/webrtc/v3/examples/internal/signal"
+	"github.com/prStory/webrtc/v3/pkg/media"
+	"github.com/prStory/webrtc/v3/pkg/media/ivfreader"
 )
 
 const (

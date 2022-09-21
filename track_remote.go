@@ -171,7 +171,7 @@ func (t *TrackRemote) ReadRTP() (*rtp.Packet, interceptor.Attributes, error) {
 	return r, attributes, nil
 }
 
-// PeekRTP is a convenience method that wraps Read and unmarshals for you.
+// PeekRTP is a convenience method that wraps Peak and unmarshals for you.
 func (t *TrackRemote) PeekRTP() (*rtp.Packet, interceptor.Attributes, error) {
 	b := make([]byte, t.receiver.api.settingEngine.getReceiveMTU())
 	i, attributes, err := t.peek(b)
